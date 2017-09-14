@@ -7,7 +7,7 @@
             <div class="col-md-12">
                 <div class="jumbotron">
                   <h1>Welcome to ECRFM Online!</h1>
-                  <p class="lead">Thank you so much for visiting. This is my test website built with Laravel. Please read my popular post!</p>
+                  <p class="lead">Thank you so much for visiting. This is our new website. Please read our popular post!</p>
                   <p><a class="btn btn-primary btn-lg" href="#" role="button">Popular Post</a></p>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     <div class="post">
                         <h3>{{ $post->title }}</h3>
                         <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
-                        <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-primary">Read More</a>
+                        <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-default">Read More</a>
                     </div>
 
                     <hr>
@@ -31,7 +31,8 @@
             </div>
 
             <div class="col-md-3 col-md-offset-1">
-                <h2>Sidebar</h2>
+                <h5>Sidebar</h5>
+                <h1>Ekhephini</h1><em>Community Radio</em>
             </div>
         </div>
 @stop
