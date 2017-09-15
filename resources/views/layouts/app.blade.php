@@ -12,7 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <style type="text/css">body, .navbar, .navbar-default, .navbar-static-top,.jumbotron, .row, .navbar-header{background-color: #fec;}</style>
+        <style type="text/css">body, .navbar, .navbar-default, .navbar-static-top,.jumbotron, .btn, .row, .navbar-header{background-color: #000; text-shadow: 0px 1px 1px #fff;}</style>
 </head>
 <body>
     <div id="app">

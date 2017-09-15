@@ -16,7 +16,7 @@
 	<div class="row">
 		<div class="col-md-8 col-md-offset-2">
 			<hr>
-			<p>Posted In: <a href="{{ route('categories.show', $post->category['id']) }}">{{ $post->category['name'] }}</a> category </p>
+			<p>Posted In: <a href="{{ route('blog.categories.show', $post->category['id']) }}">{{ $post->category['name'] }}</a> category </p>
 			
 			<div class="tags">
 				@foreach ($post->tags as $tag)

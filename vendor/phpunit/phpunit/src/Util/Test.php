@@ -458,6 +458,9 @@ class PHPUnit_Util_Test
 
                 if (is_array($data)) {
                     $result = array_merge($result, $data);
+                } elseif ($data instanceof \Iterator) {
+                    $data   = iterator_to_array($data);
+                    $result = array_merge($result, $data);
                 }
             }
 
@@ -511,7 +514,6 @@ class PHPUnit_Util_Test
     private static function cleanUpMultiLineAnnotation($docComment)
     {
         //removing initial '   * ' for docComment
-        $docComment = str_replace("\r\n", "\n", $docComment);
         $docComment = preg_replace('/' . '\n' . '\s*' . '\*' . '\s?' . '/', "\n", $docComment);
         $docComment = substr($docComment, 0, -1);
         $docComment = rtrim($docComment, "\n");
@@ -1044,14 +1046,12 @@ class PHPUnit_Util_Test
                 $result[$filename] = [];
             }
 
-            $result[$filename] = array_merge(
-                $result[$filename],
-                range($reflector->getStartLine(), $reflector->getEndLine())
+            $result[$filename] = array_unique(
+                array_merge(
+                    $result[$filename],
+                    range($reflector->getStartLine(), $reflector->getEndLine())
+                )
             );
-        }
-
-        foreach ($result as $filename => $lineNumbers) {
-            $result[$filename] = array_keys(array_flip($lineNumbers));
         }
 
         return $result;

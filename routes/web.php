@@ -48,4 +48,8 @@ Route::group(['middleware' => ['web']], function () {
 	//Route::put('blog/tags/{id}', ['uses' => 'BlogTagController@update', 'as' => 'blog.tags.update']);
 	//Route::delete('blog/tags/{id}', ['uses' => 'BlogTagController@destroy', 'as' => 'blog.tags.destroy']);
 	//Route::get('blog/tags/{id}/delete', ['uses' => 'BlogTagController@delete', 'as' => 'blog.tags.delete']);
+	
+	//front-end tags
+	Route::get('blogcategories', ['uses' => 'BlogCategoriesController@getIndex', 'as' => 'blog.category']);
+	Route::get('blog/categories/show/{id}', ['uses' => 'BlogCategoriesController@show', 'as' => 'blog.categories.show']);
 });
