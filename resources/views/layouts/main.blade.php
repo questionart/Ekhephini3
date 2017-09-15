@@ -12,7 +12,7 @@
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <style type="text/css">body, .navbar, .navbar-default, .navbar-static-top,.jumbotron, .btn, .row, .navbar-header{background-color: #000; text-shadow: 0px 1px 1px #fff;}</style>
+        <style type="text/css">body, textarea, #body_ifr, .select2-multi, .select, .form-control, .form-group, #mceu_20, .mce-toolbar-grp, .mce-container, .mce-panel, .mce-stack-layout-item, .navbar, .navbar-default, .navbar-static-top,.jumbotron, .btn, .well, .row, .navbar-header{background-color: #000; text-shadow: 0px 1px 1px #fff;}</style>
 
     </head>
     <body class="black">
