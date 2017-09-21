@@ -24,6 +24,11 @@
 				@endforeach
 			</div>
 
+            <div class="col-md-2">
+                @if(!empty($post->image))
+                    <img src="{{asset('/images/' . $post->image)}}" width="80" height="40" />
+                @endif
+            </div>
 			<h2><a href="{{ route('blog.single', $post->slug) }}">{{ $post->title }}</a></h2>
 			<h5>Published: {{ date('M j, Y', strtotime($post->created_at)) }}</h5>
 

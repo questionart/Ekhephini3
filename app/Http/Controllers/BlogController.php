@@ -14,7 +14,7 @@ class BlogController extends Controller
 {
 	public function getIndex()
 	{
-		$posts = Post::paginate(10);
+		$posts = Post::orderBy('id', 'desc')->paginate(10);
 
             $categories = DB::table('categories')
             				->crossjoin('posts')

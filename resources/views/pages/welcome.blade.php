@@ -18,16 +18,23 @@
                 
                 @foreach($posts as $post)
 
+    
+
                     <div class="post">
+                    <div class="col-md-2">
+                        @if(!empty($post->image))
+                            <img src="{{asset('/images/' . $post->image)}}" width="80" height="40" />
+                        @endif
+                    </div>
+                    <br>
                         <h3>{{ $post->title }}</h3>
-                        <p>{{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}</p>
+                        <p>
+                            {{ substr(strip_tags($post->body), 0, 300) }}{{ strlen(strip_tags($post->body)) > 300 ? "..." : "" }}
+                        </p>
                         <a href="{{ url('blog/'.$post->slug) }}" class="btn btn-default">Read More</a>
                     </div>
-
                     <hr>
-
                 @endforeach
-
             </div>
 
             <div class="col-md-3 col-md-offset-1">
